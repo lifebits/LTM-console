@@ -125,7 +125,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "/LTM-console/"
+            "baseHref": "/ltm-console/"
           }
         }
       }
