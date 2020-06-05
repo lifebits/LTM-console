@@ -1,17 +1,11 @@
-<ng-container *ngIf="isShowDetails">
-  <div class="modal">
-    <div class="modal-dialog modal-xl" role="dialog" aria-hidden="true">
-      <div class="modal-content">
-        <div class="modal-body">
-          <p>But not much to say...</p>
-        </div>
-        <div class="modal-footer">
-          <button (click)="close()" class="btn btn-outline" type="button">Cancel</button>
-          <button (click)="save()" class="btn btn-primary" type="button">Ok</button>
-        </div>
-      </div>
-    </div>
+<clr-modal [(clrModalOpen)]="isShowDetails">
+  <h3 class="modal-title">I have a nice title</h3>
+  <div class="modal-body">
+    <p>But not much to say...</p>
   </div>
-  <div class="modal-backdrop" aria-hidden="true"></div>
-</ng-container>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline" (click)="close()">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="save()">Ok</button>
+  </div>
+</clr-modal>
 
