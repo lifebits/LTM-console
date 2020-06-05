@@ -1,0 +1,19 @@
+.filter {
+
+  &__title {
+    padding-bottom: 15px;
+  }
+
+  .horizontal {
+    height: 2px;
+    background-color: #6a048a;
+    margin-bottom: 15px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+}
