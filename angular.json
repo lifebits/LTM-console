@@ -24,7 +24,7 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/favicon.ico",
+              "src/favicon.png",
               "src/assets"
             ],
             "styles": [
@@ -121,8 +121,15 @@
               "devServerTarget": "ltm-console:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "/LTM-console/"
+          }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "ltm-console"
 }
