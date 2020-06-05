@@ -1,3 +1,95 @@
 .clr-col-3 {
   padding: 20px;
 }
+
+.Violet {
+  position: relative;
+  ::ng-deep {
+    .card {
+      border: 1px solid var(--violet);
+
+      &:hover {
+        box-shadow: 0 0 10px var(--violet);
+      }
+    }
+    clr-icon {
+      &:hover {
+        cursor: pointer;
+        fill: var(--violet);
+      }
+    }
+    .title {
+      background: var(--violet);
+    }
+  }
+}
+
+.Yellow {
+  position: relative;
+  padding-top: 130px;
+  ::ng-deep {
+    .card {
+      border: 1px solid var(--yellow);
+
+      &:hover {
+        box-shadow: 0 0 10px var(--yellow);
+      }
+    }
+    clr-icon {
+      &:hover {
+        cursor: pointer;
+        fill: var(--yellow);
+      }
+    }
+    .title {
+      background: var(--yellow);
+    }
+  }
+}
+
+.Blue {
+  position: relative;
+  padding-top: 130px;
+  ::ng-deep {
+    .card {
+      border: 1px solid var(--blue);
+
+      &:hover {
+        box-shadow: 0 0 10px var(--blue);
+      }
+    }
+    clr-icon {
+      &:hover {
+        cursor: pointer;
+        fill: var(--blue);
+      }
+    }
+    .title {
+      background: var(--blue);
+    }
+  }
+}
+
+.Dark-Blue {
+  padding-top: 130px;
+  position: relative;
+  ::ng-deep {
+    .card {
+      border: 1px solid var(--dark-blue);
+
+      &:hover {
+        box-shadow: 0 0 10px var(--dark-blue);
+      }
+    }
+    clr-icon {
+      &:hover {
+        cursor: pointer;
+        fill: var(--dark-blue);
+      }
+    }
+    .title {
+      background: var(--dark-blue);
+    }
+  }
+}
+

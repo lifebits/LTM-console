@@ -1,5 +1,5 @@
 <div class="clr-row">
-  <div class="clr-col-3">
+  <div class="clr-col-3 Violet">
     <app-filter></app-filter>
     <app-card
     (showDetailsEmitter)="showDetails($event)"
@@ -9,19 +9,23 @@
     <app-card></app-card>
     <app-card></app-card>
   </div>
-  <div class="clr-col-3">
-    <app-filter></app-filter>
+  <div class="clr-col-3 Yellow">
+    <app-title
+      content="Needs Review">
+    </app-title>
     <app-card></app-card>
     <app-card></app-card>
     <app-card></app-card>
   </div>
-  <div class="clr-col-3">
-    <app-filter></app-filter>
+  <div class="clr-col-3 Blue">
+    <app-title
+      content="In Progress"></app-title>
     <app-card></app-card>
     <app-card></app-card>
   </div>
-  <div class="clr-col-3">
-    <app-filter></app-filter>
+  <div class="clr-col-3 Dark-Blue">
+    <app-title
+      content="Finished"></app-title>
     <app-card></app-card>
   </div>
 </div>
