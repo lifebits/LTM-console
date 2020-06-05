@@ -14,6 +14,26 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    &-tags {
+      button {
+        background-color: var(--violet);
+
+        clr-icon {
+          &:hover {
+            fill: var(--light);
+          }
+        }
+      }
+    }
+
+    .search {
+      input {
+        border-radius: 5px;
+        padding-left: 7px;
+        outline-color: var(--violet);
+      }
+    }
   }
 
 }
