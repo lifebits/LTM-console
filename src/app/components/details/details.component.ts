@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-details',
@@ -7,11 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsComponent implements OnInit {
 
-  isShowDetails = false;
+  @Input() isShowDetails = false;
+
+  @Output() closeDetailsEmitter = new EventEmitter<boolean>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  close() {
+    this.closeDetailsEmitter.emit(false);
+  }
+
+  save() {
+    this.closeDetailsEmitter.emit(false);
   }
 
 }

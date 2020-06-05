@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
+  isShowDetails = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  showDetails(condition: boolean) {
+    this.isShowDetails = condition;
   }
 
 }

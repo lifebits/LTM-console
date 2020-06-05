@@ -1,8 +1,9 @@
 <div class="clr-row">
-  <app-details></app-details>
   <div class="clr-col-3">
     <app-filter></app-filter>
-    <app-card></app-card>
+    <app-card
+    (showDetailsEmitter)="showDetails($event)"
+    ></app-card>
     <app-card></app-card>
     <app-card></app-card>
     <app-card></app-card>
@@ -24,3 +25,7 @@
     <app-card></app-card>
   </div>
 </div>
+<app-details
+  [isShowDetails]="isShowDetails"
+  (closeDetailsEmitter)="isShowDetails = $event"
+></app-details>
