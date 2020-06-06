@@ -1,5 +1,5 @@
 .clr-col-3 {
-  padding: 20px;
+  padding: 0 20px 20px;
 }
 
 .Violet {
@@ -33,7 +33,7 @@
 
 .Yellow {
   position: relative;
-  padding-top: 148px;
+  padding-top: 128px;
   ::ng-deep {
     .card {
       border: 1px solid var(--yellow);
@@ -63,7 +63,7 @@
 
 .Blue {
   position: relative;
-  padding-top: 148px;
+  padding-top: 128px;
   ::ng-deep {
     .card {
       border: 1px solid var(--blue);
@@ -92,7 +92,7 @@
 }
 
 .Dark-Blue {
-  padding-top: 148px;
+  padding-top: 128px;
   position: relative;
   ::ng-deep {
     .card {
