@@ -47,12 +47,12 @@ export class ContentComponent implements OnInit {
   }
 
   sortBacklog(param: string) {
-    this.backlogTasks =
+    this.filteredBacklogs =
       (param === 'star')
-      ? this.backlogTasks.sort((a, b) => b.voicesCount - a.voicesCount)
+      ? this.filteredBacklogs.sort((a, b) => b.voicesCount - a.voicesCount)
       : (param === 'heart')
-        ? this.backlogTasks.sort((a, b) => b.likesCount - a.likesCount)
-        : this.backlogTasks.sort((a, b) => b.sharesCount - a.sharesCount)
+        ? this.filteredBacklogs.sort((a, b) => b.likesCount - a.likesCount)
+        : this.filteredBacklogs.sort((a, b) => b.sharesCount - a.sharesCount)
   }
 
   filterByString(param: string) {
