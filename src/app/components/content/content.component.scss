@@ -102,6 +102,15 @@
         box-shadow: 0 0 10px var(--dark-blue);
       }
     }
+    .reject {
+      .card {
+        border: 1px solid var(--orange);
+
+        &:hover {
+          box-shadow: 0 0 10px var(--orange);
+        }
+      }
+    }
     clr-icon {
       &:hover {
         cursor: pointer;

@@ -33,6 +33,7 @@
     <app-card
       *ngFor="let card of finishedTasks; trackBy: trackByFn"
       [info]="card"
+      [class.reject]="card.status === 'reject'"
       (showDetailsEmitter)="openModal($event, card)">
     </app-card>
   </div>
@@ -141,8 +142,5 @@
     </div>
   </div>
 </jw-modal>
-<!--<app-details-->
-<!--  [isShowDetails]="isShowDetails"-->
-<!--  (closeDetailsEmitter)="isShowDetails = $event"-->
-<!--&gt;</app-details>-->
+
 
