@@ -1,4 +1,10 @@
-<div class="clr-row">
+<div *ngIf="isLoading" class="spinner-wrap">
+  <span class="spinner">
+    Loading...
+  </span>
+</div>
+
+<div *ngIf="!isLoading" class="clr-row">
   <div class="clr-col-3 Violet">
     <app-filter
       [countTasks]="backlogTasks.length"

@@ -21,12 +21,15 @@ export class ContentComponent implements OnInit {
 
   content = 'logging';
 
+  isLoading = false;
+
   constructor(
     private details: DetailService,
     private contentService: ContentService
   ) { }
 
   ngOnInit(): void {
+    this.isLoading = true;
     this.contentService.getAllTasks()
       .subscribe((res: Array<any>) => {
         this.backlogTasks = res.filter(data => data.status === 'backlog');
@@ -34,6 +37,7 @@ export class ContentComponent implements OnInit {
         this.progressTasks = res.filter(data => data.status === 'inprogress');
         this.finishedTasks = res.filter(data => data.status === 'success');
         this.assignCopy();
+        this.isLoading = false;
       });
   }
 
@@ -47,19 +51,23 @@ export class ContentComponent implements OnInit {
   }
 
   sortBacklog(param: string) {
+    this.isLoading = true;
     this.filteredBacklogs =
       (param === 'star')
       ? this.filteredBacklogs.sort((a, b) => b.voicesCount - a.voicesCount)
       : (param === 'heart')
         ? this.filteredBacklogs.sort((a, b) => b.likesCount - a.likesCount)
         : this.filteredBacklogs.sort((a, b) => b.sharesCount - a.sharesCount)
+    this.isLoading = false;
   }
 
   filterByString(param: string) {
     if (!param) {
       this.assignCopy();
     }
+    this.isLoading = true;
     this.filteredBacklogs = Object.assign([], this.backlogTasks).filter(item => item.title.trim().toLowerCase().indexOf(param.trim().toLowerCase()) > -1);
+    this.isLoading = false;
   }
 
   assignCopy() {

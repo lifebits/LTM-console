@@ -2,6 +2,14 @@
   padding: 0 20px 20px;
 }
 
+.spinner-wrap {
+  width: 100%;
+  height: 91vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .Violet {
   position: relative;
   ::ng-deep {
