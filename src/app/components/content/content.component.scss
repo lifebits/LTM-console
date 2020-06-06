@@ -21,6 +21,13 @@
     .title {
       background: var(--violet);
     }
+
+    .card__wrapper-action-wrap {
+      &:hover {
+        cursor: pointer;
+        color: var(--violet);
+      }
+    }
   }
 }
 
@@ -43,6 +50,13 @@
     }
     .title {
       background: var(--yellow);
+    }
+
+    .card__wrapper-action-wrap {
+      &:hover {
+        cursor: pointer;
+        color: var(--yellow);
+      }
     }
   }
 }
@@ -67,6 +81,13 @@
     .title {
       background: var(--blue);
     }
+
+    .card__wrapper-action-wrap {
+      &:hover {
+        cursor: pointer;
+        color: var(--blue);
+      }
+    }
   }
 }
 
@@ -89,6 +110,13 @@
     }
     .title {
       background: var(--dark-blue);
+    }
+
+    .card__wrapper-action-wrap {
+      &:hover {
+        cursor: pointer;
+        color: var(--dark-blue);
+      }
     }
   }
 }

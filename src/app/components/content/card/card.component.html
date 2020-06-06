@@ -16,9 +16,18 @@
           </div>
         </div>
         <div class="card__wrapper-action">
-          <clr-icon shape="star"></clr-icon>
-          <clr-icon shape="heart"></clr-icon>
-          <clr-icon shape="envelope"></clr-icon>
+          <div class="card__wrapper-action-wrap">
+            <div>{{ info?.voicesCount }}</div>
+            <clr-icon shape="star"></clr-icon>
+          </div>
+          <div class="card__wrapper-action-wrap">
+            <div>{{ info?.likesCount }}</div>
+            <clr-icon shape="heart"></clr-icon>
+          </div>
+          <div class="card__wrapper-action-wrap">
+            <div>{{ info?.sharesCount }}</div>
+            <clr-icon shape="envelope"></clr-icon>
+          </div>
         </div>
       </div>
       <div class="card-footer">
