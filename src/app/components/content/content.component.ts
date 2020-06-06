@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DetailService } from "../../modals/detail.service";
+import { ContentService } from "./content.service";
 
 @Component({
   selector: 'app-content',
@@ -10,17 +11,38 @@ export class ContentComponent implements OnInit {
 
   isShowDetails = false;
 
+  backlogTasks = [];
+  reviewTasks = [];
+  progressTasks = [];
+  finishedTasks = [];
+
+  activeCard;
+
   content = 'logging';
 
   constructor(
-    private details: DetailService
+    private details: DetailService,
+    private contentService: ContentService
   ) { }
 
   ngOnInit(): void {
+    this.contentService.getAllTasks()
+      .subscribe(res => {
+        console.log('res', res);
+        this.backlogTasks = res.filter(data => data.status === 'backlog');
+        this.reviewTasks = res.filter(data => data.status === 'review');
+        this.progressTasks = res.filter(data => data.status === 'inprogress');
+        this.finishedTasks = res.filter(data => data.status === 'success');
+      });
   }
 
-  openModal(id: string) {
+  openModal(id: string, card) {
+    this.activeCard = card;
     this.details.open(id);
+  }
+
+  trackByFn(index, item) {
+    return item.id;
   }
 
   closeModal(id: string) {

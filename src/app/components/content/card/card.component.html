@@ -4,14 +4,14 @@
       <div class="card__wrapper">
         <div class="card__wrapper-data">
           <div class="card-header">
-            Header
+            {{ info?.title }}
           </div>
           <div class="card-block">
-            <div class="card-title">
-              Block
-            </div>
+<!--            <div class="card-title">-->
+<!--              {{ info?.descriptions }}-->
+<!--            </div>-->
             <div class="card-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, esse.
+              {{ info?.descriptions }}
             </div>
           </div>
         </div>
@@ -22,7 +22,7 @@
         </div>
       </div>
       <div class="card-footer">
-        <button (click)="showDetails()" class="btn btn-sm btn-link">Show Details</button>
+        <button (click)="showDetails()" class="btn btn-sm btn-link">Посмотреть детали</button>
       </div>
     </div>
   </div>
