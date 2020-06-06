@@ -10,6 +10,8 @@ export class ContentComponent implements OnInit {
 
   isShowDetails = false;
 
+  content = 'logging';
+
   constructor(
     private details: DetailService
   ) { }
@@ -23,6 +25,10 @@ export class ContentComponent implements OnInit {
 
   closeModal(id: string) {
     this.details.close(id);
+  }
+
+  openContent(page: string) {
+    this.content = page;
   }
 
 }
