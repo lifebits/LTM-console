@@ -15,7 +15,7 @@ export class CardComponent implements OnInit {
   }
 
   showDetails() {
-    this.showDetailsEmitter.emit(true);
+    this.showDetailsEmitter.emit('custom-modal');
   }
 
 }

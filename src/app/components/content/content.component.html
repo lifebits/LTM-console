@@ -2,7 +2,7 @@
   <div class="clr-col-3 Violet">
     <app-filter></app-filter>
     <app-card
-    (showDetailsEmitter)="showDetails($event)"
+    (showDetailsEmitter)="openModal($event)"
     ></app-card>
     <app-card></app-card>
     <app-card></app-card>
@@ -29,7 +29,12 @@
     <app-card></app-card>
   </div>
 </div>
-<app-details
-  [isShowDetails]="isShowDetails"
-  (closeDetailsEmitter)="isShowDetails = $event"
-></app-details>
+<jw-modal id="custom-modal">
+  <h1>A Custom Modal!</h1>
+  <p>Home page text: <input type="text" /></p>
+  <button (click)="closeModal('custom-modal');">Close</button>
+</jw-modal>
+<!--<app-details-->
+<!--  [isShowDetails]="isShowDetails"-->
+<!--  (closeDetailsEmitter)="isShowDetails = $event"-->
+<!--&gt;</app-details>-->
