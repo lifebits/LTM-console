@@ -13,6 +13,7 @@ import { FilterComponent } from './components/content/filter/filter.component';
 import { TitleComponent } from './components/title/title.component';
 import { ModalsModule } from "./modals/modals.module";
 import { HttpClientModule } from "@angular/common/http";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,9 @@ import { HttpClientModule } from "@angular/common/http";
     AppRoutingModule,
     ClarityModule,
     BrowserAnimationsModule,
-    ModalsModule
+    ModalsModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

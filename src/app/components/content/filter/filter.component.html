@@ -1,23 +1,23 @@
 <div class="filter">
-  <p class="filter__title">Backlog in the selected region: 2345</p>
+  <p class="filter__title">Задачи в выбранном регионе: {{ countTasks }}</p>
   <div class="horizontal"></div>
 
   <div class="filter__content">
     <div class="filter__content-tags">
-      <button type="button" class="btn btn-icon btn-primary" aria-label="settings">
-        <clr-icon shape="home"></clr-icon>
+      <button (click)="sortBy('star')" class="btn btn-icon btn-primary" aria-label="settings">
+        <clr-icon shape="star"></clr-icon>
       </button>
-      <button type="button" class="btn btn-icon btn-primary" aria-label="settings">
-        <clr-icon shape="warning-standard"></clr-icon>
+      <button (click)="sortBy('heart')" class="btn btn-icon btn-primary" aria-label="settings">
+        <clr-icon shape="heart"></clr-icon>
       </button>
-      <button type="button" class="btn btn-icon btn-primary" aria-label="settings">
-        <clr-icon shape="car"></clr-icon>
+      <button (click)="sortBy('envelope')" class="btn btn-icon btn-primary" aria-label="settings">
+        <clr-icon shape="envelope"></clr-icon>
       </button>
     </div>
 
-    <form class="search">
+    <form [formGroup]="searchForm" class="search">
       <label for="search_input">
-        <input id="search_input" type="text" placeholder="Search for keywords...">
+        <input formControlName="search" id="search_input" type="text" placeholder="Поиск по ключевым словам...">
       </label>
     </form>
   </div>

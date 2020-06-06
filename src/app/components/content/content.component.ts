@@ -15,6 +15,7 @@ export class ContentComponent implements OnInit {
   reviewTasks = [];
   progressTasks = [];
   finishedTasks = [];
+  filteredBacklogs = [];
 
   activeCard;
 
@@ -32,6 +33,7 @@ export class ContentComponent implements OnInit {
         this.reviewTasks = res.filter(data => data.status === 'review');
         this.progressTasks = res.filter(data => data.status === 'inprogress');
         this.finishedTasks = res.filter(data => data.status === 'success');
+        this.assignCopy();
       });
   }
 
@@ -42,6 +44,26 @@ export class ContentComponent implements OnInit {
 
   trackByFn(index, item) {
     return item.id;
+  }
+
+  sortBacklog(param: string) {
+    this.backlogTasks =
+      (param === 'star')
+      ? this.backlogTasks.sort((a, b) => b.voicesCount - a.voicesCount)
+      : (param === 'heart')
+        ? this.backlogTasks.sort((a, b) => b.likesCount - a.likesCount)
+        : this.backlogTasks.sort((a, b) => b.sharesCount - a.sharesCount)
+  }
+
+  filterByString(param: string) {
+    if (!param) {
+      this.assignCopy();
+    }
+    this.filteredBacklogs = Object.assign([], this.backlogTasks).filter(item => item.title.trim().toLowerCase().indexOf(param.trim().toLowerCase()) > -1);
+  }
+
+  assignCopy() {
+    this.filteredBacklogs = Object.assign([], this.backlogTasks);
   }
 
   closeModal(id: string) {

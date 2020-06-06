@@ -12,9 +12,11 @@
       padding-left: 15px;
 
       &-wrap {
+        width: 40px;
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
         div {
           margin-right: 5px;
         }
