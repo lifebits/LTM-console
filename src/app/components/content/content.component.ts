@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DetailService } from "../../modals/detail.service";
 
 @Component({
   selector: 'app-content',
@@ -9,13 +10,19 @@ export class ContentComponent implements OnInit {
 
   isShowDetails = false;
 
-  constructor() { }
+  constructor(
+    private details: DetailService
+  ) { }
 
   ngOnInit(): void {
   }
 
-  showDetails(condition: boolean) {
-    this.isShowDetails = condition;
+  openModal(id: string) {
+    this.details.open(id);
+  }
+
+  closeModal(id: string) {
+    this.details.close(id);
   }
 
 }

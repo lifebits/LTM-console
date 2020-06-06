@@ -10,8 +10,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { ContentComponent } from './components/content/content.component';
 import { CardComponent } from './components/content/card/card.component';
 import { FilterComponent } from './components/content/filter/filter.component';
-import { DetailsComponent } from './components/details/details.component';
 import { TitleComponent } from './components/title/title.component';
+import { ModalsModule } from "./modals/modals.module";
 
 @NgModule({
   declarations: [
@@ -20,14 +20,14 @@ import { TitleComponent } from './components/title/title.component';
     ContentComponent,
     CardComponent,
     FilterComponent,
-    DetailsComponent,
     TitleComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ClarityModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ModalsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
