@@ -28,7 +28,7 @@ export class ContentComponent implements OnInit {
   ngOnInit(): void {
     this.contentService.getAllTasks()
       .subscribe((res: Array<any>) => {
-        console.log('res', res);
+        // console.log('res', res);
         this.backlogTasks = res.filter(data => data.status === 'backlog');
         this.reviewTasks = res.filter(data => data.status === 'review');
         this.progressTasks = res.filter(data => data.status === 'inprogress');

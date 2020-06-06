@@ -14,7 +14,7 @@ export class CardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log('info', this.info);
+    // console.log('info', this.info);
   }
 
   showDetails() {
