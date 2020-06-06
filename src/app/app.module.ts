@@ -12,6 +12,7 @@ import { CardComponent } from './components/content/card/card.component';
 import { FilterComponent } from './components/content/filter/filter.component';
 import { TitleComponent } from './components/title/title.component';
 import { ModalsModule } from "./modals/modals.module";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ModalsModule } from "./modals/modals.module";
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     ClarityModule,
     BrowserAnimationsModule,

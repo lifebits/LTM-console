@@ -300,6 +300,8 @@
 
       &-logging {
         padding: 20px;
+        min-height: 300px;
+        overflow: auto;
         &-item {
           padding: 5px;
           width: 75%;

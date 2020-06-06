@@ -2,59 +2,66 @@
   <div class="clr-col-3 Violet">
     <app-filter></app-filter>
     <app-card
-    (showDetailsEmitter)="openModal($event)"
-    ></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
+      *ngFor="let card of backlogTasks; trackBy: trackByFn"
+      [info]="card"
+      (showDetailsEmitter)="openModal($event, card)">
+    </app-card>
   </div>
   <div class="clr-col-3 Yellow">
     <app-title
       content="Needs Review">
     </app-title>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
+    <app-card
+      *ngFor="let card of reviewTasks; trackBy: trackByFn"
+      [info]="card"
+      (showDetailsEmitter)="openModal($event, card)">
+    </app-card>
   </div>
   <div class="clr-col-3 Blue">
     <app-title
       content="In Progress"></app-title>
-    <app-card></app-card>
-    <app-card></app-card>
+    <app-card
+      *ngFor="let card of progressTasks; trackBy: trackByFn"
+      [info]="card"
+      (showDetailsEmitter)="openModal($event, card)">
+    </app-card>
   </div>
   <div class="clr-col-3 Dark-Blue">
     <app-title
       content="Finished"></app-title>
-    <app-card></app-card>
+    <app-card
+      *ngFor="let card of finishedTasks; trackBy: trackByFn"
+      [info]="card"
+      (showDetailsEmitter)="openModal($event, card)">
+    </app-card>
   </div>
 </div>
 <jw-modal id="custom-modal">
   <div class="info">
-    <h1>Some title</h1>
-    <h3>Some subtitle</h3>
+    <h1>{{ activeCard?.title }}</h1>
+<!--    <h3>Some subtitle</h3>-->
     <div class="info__action">
       <div class="info__action-item">
         <clr-icon shape="star"></clr-icon>
-        <div>4</div>
+        <div>{{ activeCard?.voicesCount }}</div>
       </div>
       <div class="info__action-item">
         <clr-icon shape="heart"></clr-icon>
-        <div>4</div>
+        <div>{{ activeCard?.likesCount }}</div>
       </div>
       <div class="info__action-item">
         <clr-icon shape="envelope"></clr-icon>
-        <div>4</div>
+        <div>{{ activeCard?.sharesCount }}</div>
       </div>
     </div>
     <div class="info__description">
-      <div class="info__description-title">Description:</div>
+      <div class="info__description-title">Описание:</div>
       <div class="info__description-content">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias aliquid aperiam atque aut beatae consequuntur deserunt dolore doloribus ducimus eos et eveniet, excepturi facere fuga illum impedit ipsam iste iure maiores, minima nobis nulla numquam odio odit optio perspiciatis possimus provident quod ratione repellat repellendus sequi suscipit temporibus tenetur.
+        {{ activeCard?.descriptions}}
       </div>
     </div>
     <div class="info__imgs">
-      <div class="info__imgs-title">Here some images</div>
+      <div class="info__imgs-title">Фото</div>
       <div class="info__imgs-container">
         <img src="assets/images/dep.jpg" alt="Честный депутат с кулачком!">
         <img src="assets/images/dep.jpg" alt="Честный депутат с кулачком">
@@ -62,22 +69,22 @@
         <img src="assets/images/dep.jpg" alt="Честный депутат с кулачком">
       </div>
     </div>
-    <div class="info__footer">
-      <div class="info__footer-title">
-        Here some footer title
-      </div>
-      <div class="info__footer-subtitle">
-        Here some interesting footer title
-      </div>
-    </div>
+<!--    <div class="info__footer">-->
+<!--      <div class="info__footer-title">-->
+<!--        Here some footer title-->
+<!--      </div>-->
+<!--      <div class="info__footer-subtitle">-->
+<!--        Here some interesting footer title-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
   <div class="chat">
     <div class="chat__header">
       <div (click)="openContent('logging')" [class.active]="content === 'logging'" class="chat__header-title">
-        Process logging
+        Таймлан событий
       </div>
       <div (click)="openContent('chat')" [class.active]="content === 'chat'" class="chat__header-description">
-        Common discussion
+        Чат со слугой народа
       </div>
     </div>
     <div *ngIf="content === 'chat'" class="chat__content">
@@ -114,29 +121,20 @@
       <div class="chat__content-enter">
         <form class="chat__content-enter-form">
           <input placeholder="Введите ваш ответ"/>
-          <button type="button">Send</button>
+          <button type="button">Отправить</button>
         </form>
       </div>
     </div>
     <div *ngIf="content === 'logging'">
       <div class="chat__content-logging">
-        <div class="chat__content-logging-item">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, placeat!
-        </div>
-        <div class="chat__content-logging-item">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, placeat!
-        </div>
-        <div class="chat__content-logging-item">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, placeat!
-        </div>
-        <div class="chat__content-logging-item">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, placeat!
+        <div *ngFor="let flow of activeCard?.flows" class="chat__content-logging-item">
+          {{ flow.title }}
         </div>
       </div>
       <div class="chat__content-enter">
         <form class="chat__content-enter-form">
           <input placeholder="Введите ваш ответ"/>
-          <button type="button">Send</button>
+          <button type="button">Отправить</button>
         </form>
       </div>
     </div>
