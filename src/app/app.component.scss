@@ -18,9 +18,9 @@
       overflow: auto;
 
       .jw-modal-body {
-        padding: 20px;
-        background: #fff;
-
+        background: var(--light);
+        border: 1px solid var(--violet);
+        box-shadow: 0 0 10px var(--violet);
         /* margin exposes part of the modal background */
         margin: 40px;
       }
