@@ -178,18 +178,35 @@
     &__header {
       display: flex;
       justify-content: space-between;
+      font-size: 20px;
 
       &-title {
-        width: 60%;
+        width: 50%;
         text-align: center;
         padding: 15px;
-        font-size: 20px;
-        font-weight: bold;
+        cursor: pointer;
+        border-right: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+
+        &.active {
+          font-weight: bold;
+          border-right: 1px solid var(--violet);
+          border-bottom: 1px solid var(--violet);
+        }
       }
       &-description {
+        width: 50%;
+        text-align: center;
         padding: 15px;
-        border-left: 1px solid var(--violet);
-        border-bottom: 1px solid var(--violet);
+        cursor: pointer;
+        border-left: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+
+        &.active {
+          font-weight: bold;
+          border-left: 1px solid var(--violet);
+          border-bottom: 1px solid var(--violet);
+        }
       }
     }
 
@@ -278,6 +295,17 @@
             background-color: var(--violet);
             outline: none;
           }
+        }
+      }
+
+      &-logging {
+        padding: 20px;
+        &-item {
+          padding: 5px;
+          width: 75%;
+          border: 1px solid var(--violet);
+          border-radius: 5px;
+          margin-bottom: 5px;
         }
       }
     }

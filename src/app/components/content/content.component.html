@@ -73,14 +73,14 @@
   </div>
   <div class="chat">
     <div class="chat__header">
-      <div class="chat__header-title">
+      <div (click)="openContent('logging')" [class.active]="content === 'logging'" class="chat__header-title">
         Process logging
       </div>
-      <div class="chat__header-description">
+      <div (click)="openContent('chat')" [class.active]="content === 'chat'" class="chat__header-description">
         Common discussion
       </div>
     </div>
-    <div class="chat__content">
+    <div *ngIf="content === 'chat'" class="chat__content">
       <div class="chat__content-message">
         <div class="chat__content-message-from">
           <img src="assets/images/dep.jpg" alt="Честный депутат с кулачком">
@@ -109,6 +109,28 @@
             <div>Спасибо Вам!</div>
           </div>
           <img src="assets/images/dep.jpg" alt="Честный депутат с кулачком">
+        </div>
+      </div>
+      <div class="chat__content-enter">
+        <form class="chat__content-enter-form">
+          <input placeholder="Введите ваш ответ"/>
+          <button type="button">Send</button>
+        </form>
+      </div>
+    </div>
+    <div *ngIf="content === 'logging'">
+      <div class="chat__content-logging">
+        <div class="chat__content-logging-item">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, placeat!
+        </div>
+        <div class="chat__content-logging-item">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, placeat!
+        </div>
+        <div class="chat__content-logging-item">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, placeat!
+        </div>
+        <div class="chat__content-logging-item">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, placeat!
         </div>
       </div>
       <div class="chat__content-enter">
