@@ -13,9 +13,7 @@ export class CardComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    // console.log('info', this.info);
-  }
+  ngOnInit(): void {}
 
   showDetails() {
     this.showDetailsEmitter.emit('custom-modal');
